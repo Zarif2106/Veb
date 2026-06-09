@@ -1,0 +1,84 @@
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background-image: url(../img/fon6.png);
+  padding: 60px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.footer__menu {
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer__list {
+  list-style: none;
+  gap: 30px;
+}
+
+.footer__link {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+}
+
+.socials {
+  list-style: none;
+  gap: 20px;
+}
+
+.socials__icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-text-muted);
+  transition: var(--transition);
+}
+
+.socials__link:hover .socials__icon {
+  fill: var(--color-primary);
+}
+
+.footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer__copyright {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.footer__privacy-policy {
+  color: var(--color-text-muted);
+  font-size: 13px;
+}
+
+.footer__privacy-policy span {
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.footer__privacy-policy span:hover {
+  color: var(--color-primary);
+}

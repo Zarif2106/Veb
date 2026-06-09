@@ -1,0 +1,171 @@
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-image: url(../img/fon6.png);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  transition: var(--transition);
+}
+
+.header__container {
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.header__menu {
+  flex: 1;
+  margin: 0 40px;
+}
+
+.header__list {
+  list-style: none;
+  gap: 35px;
+  justify-content: center;
+}
+
+.header__link {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  transition: var(--transition);
+  position: relative;
+}
+
+.header__link:hover {
+  color: var(--color-primary);
+}
+
+.header__menu-right {
+  gap: 25px;
+}
+
+/* Language Selector */
+.header__lang-btn {
+  color: var(--color-text);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: none;
+  background: transparent;
+  transition: var(--transition);
+}
+
+.header__lang-btn:hover {
+  color: var(--color-primary);
+}
+
+.header__list-lang {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--color-gray);
+  border-radius: 4px;
+  list-style: none;
+  min-width: 80px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+  margin-top: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+}
+
+.header__lang-box:hover .header__list-lang {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.header__item-lang button {
+  width: 100%;
+  padding: 12px 15px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+  background: transparent;
+  text-align: left;
+}
+
+.header__item-lang button:hover {
+  background: var(--color-primary);
+  color: var(--color-dark);
+}
+
+/* Platform Icons */
+.header__icons-box {
+  gap: 25px;
+}
+
+.header__link-icon {
+  color: var(--color-text);
+  transition: var(--transition);
+}
+
+.header__link-icon svg {
+  width: 54px;
+  height: 54px;
+  fill: currentColor;
+  margin-top: 20px;
+}
+
+.header__link-icon:hover {
+  color: var(--color-primary);
+}
+
+/* Register Button */
+.header__register-btn {
+  background: var(--color-primary);
+  color: var(--color-dark);
+  padding: 10px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  transition: var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.header__register-btn:hover {
+  background: #ffb347;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(234, 144, 40, 0.4);
+}
+
+/* Burger Menu */
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.burger__line {
+  width: 25px;
+  height: 2px;
+  background: var(--color-text);
+  transition: var(--transition);
+}

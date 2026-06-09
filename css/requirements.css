@@ -1,0 +1,93 @@
+/* ============================================
+   SYSTEM REQUIREMENTS (FOURTH)
+   ============================================ */
+.four {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(10, 10, 10, 0.9) 100%);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.four::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: url('../img/fon4.jpg') center/cover;
+  opacity: 0.4;
+  z-index: 0;
+}
+
+.four__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.four__subtitle {
+  font-size: 16px;
+  color: var(--color-text);
+  margin-bottom: 15px;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.four__title {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 60px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.four__table {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  max-width: 1400px;
+  margin-right: 40%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table__item {
+  padding: 30px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition);
+}
+
+.table__item:nth-child(2n) {
+  border-right: none;
+}
+
+.table__item:hover {
+  background: rgba(234, 144, 40, 0.05);
+}
+
+.table__title {
+  color: var(--color-primary);
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table__descr {
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.9;
+}

@@ -59,14 +59,35 @@
             </div>
             
             <!-- Platform icons -->
-            <div class="header__icons-box flex-v-center">
-              <a class="header__link-icon" href="#" aria-label="Xbox">
-                <svg><use xlink:href="img/xbox.svg"></use></svg>
-              </a>
-              <a class="header__link-icon" href="#" aria-label="Steam">
-                <svg><use xlink:href="img/steam.svg"></use></svg>
-              </a>
-            </div>
+            <!-- В header__menu-right добавьте кнопку -->
+<div class="header__menu-right flex-v-center">
+  <!-- Language selector -->
+  <div class="header__lang-box">
+    <!-- ... существующий код ... -->
+  </div>
+  
+  <!-- Platform icons -->
+  <div class="header__icons-box flex-v-center">
+    <a class="header__link-icon" href="#" aria-label="Xbox">
+      <svg><use xlink:href="img/xbox.svg"></use></svg>
+    </a>
+    <a class="header__link-icon" href="#" aria-label="Steam">
+      <svg><use xlink:href="img/steam.svg"></use></svg>
+    </a>
+  </div>
+  
+  <!-- Кнопка регистрации -->
+  <button class="header__register-btn btn-reset" id="openRegisterModal">
+    Sign Up
+  </button>
+  
+  <!-- Burger menu -->
+  <button class="header__burger burger btn-reset" aria-label="open menu">
+    <span class="burger__line burger__line_top"></span>
+    <span class="burger__line burger__line_middle"></span>
+    <span class="burger__line burger__line_bottom"></span>
+  </button>
+</div>
             
             <!-- Burger menu -->
             <button class="header__burger burger btn-reset" aria-label="open menu">
@@ -138,41 +159,24 @@
             <a class="second__link link" href="#">Learn More</a>
           </div>
           
-          <div class="second__slider-cards swiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <picture>
-                  <source srcset="img/s2.png" type="image/webp">
-                  <img src="img/bg-first.jpg" alt="Team squad">
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source srcset="img/bg-second.webp" type="image/webp">
-                  <img src="img/bg-second.jpg" alt="Swamp">
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source srcset="img/bg-third.webp" type="image/webp">
-                  <img src="img/bg-third.jpg" alt="Game character">
-                </picture>
-              </div>
-              <div class="swiper-slide">
-                <picture>
-                  <source srcset="img/bg-four.webp" type="image/webp">
-                  <img src="img/bg-four.jpg" alt="Temple">
-                </picture>
-              </div>
-            </div>
-            <button class="swiper-button-prev btn-reset" aria-label="previous slide">
-              <svg><use xlink:href="img/sprite.svg#arrow-slide"></use></svg>
-            </button>
-            <div class="swiper-pagination"></div>
-            <button class="swiper-button-next btn-reset" aria-label="next slide">
-              <svg><use xlink:href="img/sprite.svg#arrow-slide"></use></svg>
-            </button>
-          </div>
+       <div class="second__slider-cards swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <img src="img/s2.jpg" alt="Description">
+    </div>
+    <div class="swiper-slide">
+      <img src="img/fon3.jpg" alt="Description">
+    </div>
+    <div class="swiper-slide">
+      <img src="img/foot.png" alt="Description">
+    </div>
+    <!-- и т.д. -->
+  </div>
+  
+  <button class="swiper-button-prev btn-reset" aria-label="previous slide"></button>
+  <div class="swiper-pagination"></div>
+  <button class="swiper-button-next btn-reset" aria-label="next slide"></button>
+</div>
         </div>
       </section>
       
@@ -312,32 +316,37 @@
       
       <!-- SUBSCRIBE SECTION -->
       <section class="subscribe scroll-snap-section flex-all-center" id="subscribe">
-        <div class="subscribe__container container">
-          <div class="subscribe__img">
-            <picture>
-              <source srcset="img/foot.png" type="image/webp">
-              <img src="img/foot.png" alt="Skull with red crystal">
-            </picture>
-          </div>
-          
-          <div class="subscribe__content">
-            <span class="subscribe__subtitle subtitle">Want to stay in touch?</span>
-            <h2 class="subscribe__title title">Newsletter Subscribe</h2>
-            <p class="subscribe__text text">
-              In order to start receiving our news, all you have to do is enter your email address. 
-              Everything else will be taken care of by us. We will send you emails containing information about game. We don't spam.
-            </p>
-          </div>
-          
-          <form class="subscribe__form form" action="#" method="post">
-            <label class="form__label-box">
-              <span class="form__input-title">Your email address</span>
-              <input class="form__input text" type="email" name="email" placeholder="your@email.com" required>
-            </label>
-            <button class="form__link link" type="submit">Subscribe now</button>
-          </form>
+  <div class="subscribe__container container">
+    
+    <!-- ЛЕВАЯ ЧАСТЬ: Картинка -->
+    <div class="subscribe__img">
+      <picture>
+        <source srcset="img/foot.png" type="image/webp">
+        <img src="img/foot.png" alt="Skull with red crystal">
+      </picture>
+    </div>
+    
+    <!-- ПРАВАЯ ЧАСТЬ: Текст + Форма -->
+    <div class="subscribe__content">
+      <span class="subscribe__subtitle subtitle">Want to stay in touch?</span>
+      <h2 class="subscribe__title title">Newsletter Subscribe</h2>
+      <p class="subscribe__text text">
+        In order to start receiving our news, all you have to do is enter your email address. 
+        Everything else will be taken care of by us. We will send you emails containing information about game. We don't spam.
+      </p>
+      
+      <!-- ФОРМА ПОД ТЕКСТОМ -->
+      <form class="subscribe__form" action="#" method="post">
+        <div class="form__label-box">
+          <span class="form__input-title">Your email address</span>
+          <input class="form__input text" type="email" name="email" placeholder="your@email.com" required>
         </div>
-      </section>
+        <button class="form__link link" type="submit">Subscribe now</button>
+      </form>
+    </div>
+    
+  </div>
+</section>
       
       <!-- FOOTER -->
       <footer class="footer scroll-snap-section">
@@ -390,11 +399,209 @@
       
     </main>
   </div>
+  <!-- Modal Registration Window -->
+<div class="modal modal_register" id="registerModal">
+  <div class="modal__overlay" id="registerModalOverlay"></div>
+  <div class="modal__content">
+    <button class="modal__close" id="closeRegisterModal" aria-label="Close modal">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    
+    <div class="modal__header">
+      <h2 class="modal__title">Join SOS</h2>
+      <p class="modal__subtitle">Create your account to start playing</p>
+    </div>
+    
+    <!-- Форма регистрации (существующая) -->
+<form class="modal__form modal__form_register" id="registerForm">
+  <div class="form__group">
+    <label class="form__label" for="registerUsername">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      Username
+    </label>
+    <input type="text" id="registerUsername" class="form__input" placeholder="Enter your username" required minlength="3">
+  </div>
+  
+  <div class="form__group">
+    <label class="form__label" for="registerEmail">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      Email
+    </label>
+    <input type="email" id="registerEmail" class="form__input" placeholder="Enter your email" required>
+  </div>
+  
+  <div class="form__group">
+    <label class="form__label" for="registerPassword">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      Password
+    </label>
+    <div class="password__wrapper">
+      <input type="password" id="registerPassword" class="form__input" placeholder="Create password" required minlength="6">
+      <button type="button" class="password__toggle" id="togglePassword">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </div>
+    <div class="password__strength" id="passwordStrength"></div>
+  </div>
+  
+  <div class="form__group">
+    <label class="form__label" for="registerConfirmPassword">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      Confirm Password
+    </label>
+    <input type="password" id="registerConfirmPassword" class="form__input" placeholder="Confirm your password" required>
+  </div>
+  
+  <div class="form__checkbox">
+    <input type="checkbox" id="agreeTerms" required>
+    <label for="agreeTerms">
+      I agree to the <a href="#" class="link-primary">Terms of Service</a> and 
+      <a href="#" class="link-primary">Privacy Policy</a>
+    </label>
+  </div>
+  
+  <button type="submit" class="modal__submit btn-reset">
+    Create Account
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+  
+  <div class="modal__divider">
+    <span>Or sign up with</span>
+  </div>
+  
+  <div class="modal__social">
+    <button type="button" class="social__btn steam">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <use href="img/steam.svg"></use>
+      </svg>
+      Steam
+    </button>
+    <button type="button" class="social__btn xbox">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <use href="img/xbox.svg"></use>
+      </svg>
+      Xbox
+    </button>
+  </div>
+  
+  <p class="modal__footer">
+    Already have an account? 
+    <button type="button" class="modal__switch-link" id="switchToSignin">Sign In</button>
+  </p>
+</form>
+
+<!-- === НОВАЯ ФОРМА SIGN IN === -->
+<form class="modal__form modal__form_signin" id="signinForm" style="display: none;">
+  <div class="form__group">
+    <label class="form__label" for="signinEmail">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      Email or Username
+    </label>
+    <input 
+      type="text" 
+      id="signinEmail" 
+      class="form__input" 
+      placeholder="Enter your email or username"
+      required
+    >
+  </div>
+  
+  <div class="form__group">
+    <label class="form__label" for="signinPassword">
+      <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+      </svg>
+      Password
+    </label>
+    <div class="password__wrapper">
+      <input 
+        type="password" 
+        id="signinPassword" 
+        class="form__input" 
+        placeholder="Enter your password"
+        required
+      >
+      <button type="button" class="password__toggle" id="toggleSigninPassword">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+      </button>
+    </div>
+  </div>
+  
+  <div class="form__options">
+    <div class="form__checkbox">
+      <input type="checkbox" id="rememberMe">
+      <label for="rememberMe">Remember me</label>
+    </div>
+    <a href="#" class="forgot__password">Forgot Password?</a>
+  </div>
+  
+  <button type="submit" class="modal__submit btn-reset">
+    Sign In
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </button>
+  
+  <div class="modal__divider">
+    <span>Or continue with</span>
+  </div>
+  
+  <div class="modal__social">
+    <button type="button" class="social__btn steam">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <use href="img/steam.svg"></use>
+      </svg>
+      Steam
+    </button>
+    <button type="button" class="social__btn xbox">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <use href="img/xbox.svg"></use>
+      </svg>
+      Xbox
+    </button>
+  </div>
+  
+  <p class="modal__footer">
+    Don't have an account? 
+    <button type="button" class="modal__switch-link" id="switchToRegister">Sign Up</button>
+  </p>
+</form>
+  </div>
+</div>
   
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <!-- Main JS -->
-  <script src="js/main.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
