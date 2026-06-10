@@ -26,6 +26,25 @@
 </head>
 
 <body>
+  <?php
+  if (isset($_GET['status'])) {
+      if ($_GET['status'] === 'success') {
+          echo '<script>alert("Регистрация прошла успешно! Данные сохранены.");</script>';
+      } elseif ($_GET['status'] === 'error' && isset($_GET['msg'])) {
+          $msg = urldecode($_GET['msg']);
+          echo '<script>alert("Ошибка: ' . addslashes($msg) . '");</script>';
+      }
+  }
+  if (isset($_GET['subscribe'])) {
+      if ($_GET['subscribe'] === 'success') {
+          echo '<script>alert("Вы успешно подписались на рассылку!");</script>';
+      } elseif ($_GET['subscribe'] === 'error' && isset($_GET['msg'])) {
+          $msg = urldecode($_GET['msg']);
+          echo '<script>alert("Ошибка: ' . addslashes($msg) . '");</script>';
+      }
+  }
+  ?>
+  
   <div class="wrapper">
     <main class="main">
       
@@ -336,13 +355,13 @@
       </p>
       
       <!-- ФОРМА ПОД ТЕКСТОМ -->
-      <form class="subscribe__form" action="#" method="post">
-        <div class="form__label-box">
-          <span class="form__input-title">Your email address</span>
-          <input class="form__input text" type="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <button class="form__link link" type="submit">Subscribe now</button>
-      </form>
+      <form class="subscribe__form" action="subscribe.php" method="POST">
+  <div class="form__label-box">
+    <span class="form__input-title">Your email address</span>
+    <input class="form__input text" type="email" name="email" placeholder="your@email.com" required>
+  </div>
+  <button class="form__link link" type="submit">Subscribe now</button>
+</form>
     </div>
     
   </div>
@@ -416,7 +435,7 @@
     </div>
     
     <!-- Форма регистрации (существующая) -->
-<form class="modal__form modal__form_register" id="registerForm">
+<form class="modal__form modal__form_register" id="registerForm" action="register.php" method="POST">
   <div class="form__group">
     <label class="form__label" for="registerUsername">
       <svg class="form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -425,7 +444,7 @@
       </svg>
       Username
     </label>
-    <input type="text" id="registerUsername" class="form__input" placeholder="Enter your username" required minlength="3">
+    <input type="text" name="username" id="registerUsername" class="form__input" placeholder="Enter your username" required minlength="3">
   </div>
   
   <div class="form__group">
@@ -436,7 +455,7 @@
       </svg>
       Email
     </label>
-    <input type="email" id="registerEmail" class="form__input" placeholder="Enter your email" required>
+    <input type="email" name="email" id="registerEmail" class="form__input" placeholder="Enter your email" required>
   </div>
   
   <div class="form__group">
@@ -448,7 +467,7 @@
       Password
     </label>
     <div class="password__wrapper">
-      <input type="password" id="registerPassword" class="form__input" placeholder="Create password" required minlength="6">
+      <input type="password" name="password" id="registerPassword" class="form__input" placeholder="Create password" required minlength="6">
       <button type="button" class="password__toggle" id="togglePassword">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -467,11 +486,11 @@
       </svg>
       Confirm Password
     </label>
-    <input type="password" id="registerConfirmPassword" class="form__input" placeholder="Confirm your password" required>
+    <input type="password" name="confirm_password" id="registerConfirmPassword" class="form__input" placeholder="Confirm your password" required>
   </div>
   
   <div class="form__checkbox">
-    <input type="checkbox" id="agreeTerms" required>
+    <input type="checkbox" name="agree" id="agreeTerms" required>
     <label for="agreeTerms">
       I agree to the <a href="#" class="link-primary">Terms of Service</a> and 
       <a href="#" class="link-primary">Privacy Policy</a>
